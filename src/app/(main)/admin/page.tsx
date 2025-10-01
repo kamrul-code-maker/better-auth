@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 import { DeleteApplication } from "./delete-application";
+import { getServerSession } from "@/lib/get-session";
+import { forbidden } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Admin",
 };
 
-export default function AdminPage() {
+export default async  function AdminPage() {
   // TODO: Check for admin role
+
+  const session = await getServerSession();
+
+  const user = session?.user; 
+
+  if (user?.role !== "admin") forbidden();
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-12">
