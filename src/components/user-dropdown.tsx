@@ -15,15 +15,14 @@ import {
 } from "./ui/dropdown-menu";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
+import { User } from "@/lib/auth";
 
-export function UserDropdown() {
-  // TODO: Render real user info
-  const user = {
-    name: "John Doe",
-    email: "john.doe@example.com",
-    image: undefined,
-    role: "admin",
-  };
+interface UserDropdownProps {
+  user:User; 
+}
+
+export function UserDropdown({ user }: UserDropdownProps) {
+
 
   return (
     <DropdownMenu>
