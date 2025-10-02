@@ -8,7 +8,6 @@ export const metadata: Metadata = {
 };
 
 export default async function VerifyEmailPage() {
-  // TODO: Redirect user if not authenticated or already verified
   const session = await getServerSession();
   const user = session?.user;
 
