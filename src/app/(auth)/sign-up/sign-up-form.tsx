@@ -33,7 +33,7 @@ const signUpSchema = z
   .object({
     name: z.string().min(1, { message: "Name is required" }),
     email: z.email({ message: "Please enter a valid email" }),
-    password: passwordSchema,
+    password: z.string(), 
     passwordConfirmation: z
       .string()
       .min(1, { message: "Please confirm password" }),
