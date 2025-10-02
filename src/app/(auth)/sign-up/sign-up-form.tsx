@@ -66,7 +66,7 @@ export function SignUpForm() {
 
     const {  error } = await authClient.signUp.email({
       email, password, name,
-      callbackURL: "/email-verfied"
+      callbackURL: "/email-verified"
     })
 
     if (error) {
